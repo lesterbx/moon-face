@@ -11,6 +11,9 @@ const mapRange = (x, in_min, in_max, out_min, out_max) => {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 }
 
+/**
+ * Determines if the current navigator belongs to a mobile device
+ */
 const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i)

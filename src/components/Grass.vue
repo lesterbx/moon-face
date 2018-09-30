@@ -3,10 +3,6 @@
 </template>
 
 <script>
-  import SVG from 'svg.js'
-  import utils from '../utils'
-  import grass from '../vectors/grass'
-
   export default {
     name: 'Grass'
   }
@@ -22,6 +18,6 @@
         background-repeat: repeat-x;
         position: absolute;
         left: 0;
-        bottom:-50px;
+        bottom:-60px;
     }
 </style>
