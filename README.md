@@ -1,21 +1,8 @@
 # moon-face
 
-## Project setup
-```
-npm install
-```
+Super simple website that shows the current phase of the moon in a pretty way.  
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Link: http://www.moonface.es  
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Using [Vue.js](https://vuejs.org/) as MVC framework, and [Suncalc](https://github.com/mourner/suncalc) for the moon phase calculations.
 
-### Lints and fixes files
-```
-npm run lint
-```
