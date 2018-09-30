@@ -1,6 +1,6 @@
 <template>
     <div class="button location-button" v-if="location">
-        <i class="icon-location"></i>{{location.city}}
+        <i class="icon-location"></i>San Lorenzo de {{ location.city }}
     </div>
 </template>
 

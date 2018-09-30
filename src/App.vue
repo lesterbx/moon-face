@@ -67,5 +67,6 @@
         color: #fff;
         border: 1px solid #fff;
         border-radius: 3px;
+        max-width: 45%;
     }
 </style>

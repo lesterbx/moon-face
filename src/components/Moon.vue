@@ -31,7 +31,7 @@
     methods: {
       paintMoon () {
         if (moon) moon.remove()
-        if(shadow) shadow.remove()
+        if (shadow) shadow.remove()
         if (draw) {
           let width = document.querySelector('body').offsetWidth
           let height = document.querySelector('body').offsetHeight
@@ -43,10 +43,10 @@
           let cx = (width / 2) - (radius / 2)
           let cy = (height / 2) - (radius / 2)
 
-          if (height > 500) cy -= 120
+          if (height > 500) cy -= 100
           shadow = draw.path(this.getPath(radius / 2, { fraction: 1, phase: 0.97 })).fill('#151515')
           moon = draw.path(this.getPath(radius / 2, this.moonInfo)).fill('#dfe1b7')
-         moon.move(cx, cy)
+          moon.move(cx, cy)
           shadow.move(cx, cy)
         }
       },
