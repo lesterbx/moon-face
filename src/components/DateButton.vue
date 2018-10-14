@@ -18,7 +18,7 @@
         },
         set (date) {
           if (date) {
-            this.$emit('dateChanged', moment(date, 'YYYY-MM-DD'))
+            this.$emit('dateChanged', moment(date, 'YYYY-MM-DD').toDate())
           }
         }
       }
@@ -33,11 +33,22 @@
         right: 1em;
     }
 
+    input[type="date"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        cursor: pointer;
+        display: inline !important;
+    }
+
     input[type="date"] {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         background-color: transparent;
         color: #fff;
         border: none;
         font-size: 1em;
+        display: inline;
     }
 </style>

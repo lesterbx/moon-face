@@ -4,7 +4,9 @@
         <moon :date="date"/>
         <grass/>
         <date-button :date="date" @dateChanged="dateChanged"></date-button>
-        <location-button></location-button>
+        <div class="arrow left-arrow" @click="prevDay"><i class="icon-left-open"></i></div>
+        <div class="arrow right-arrow" @click="nextDay"><i class="icon-right-open"></i></div>
+        <!--<location-button></location-button>-->
     </div>
 </template>
 
@@ -14,6 +16,7 @@
   import Moon from './components/Moon'
   import DateButton from './components/DateButton'
   import LocationButton from './components/LocationButton'
+  import moment from 'moment'
 
   export default {
     name: 'app',
@@ -32,6 +35,12 @@
     methods: {
       dateChanged (date) {
         this.date = date
+      },
+      nextDay () {
+        this.date = moment(this.date).add(1, 'days').toDate()
+      },
+      prevDay () {
+        this.date = moment(this.date).subtract(1, 'days').toDate()
       }
     }
   }
@@ -67,6 +76,29 @@
         color: #fff;
         border: 1px solid #fff;
         border-radius: 3px;
-        max-width: 45%;
+    }
+
+    .arrow {
+        position: fixed;
+        height: 88vh;
+        z-index: 100;
+        bottom: 0;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+    }
+
+    .arrow:hover {
+        cursor: pointer;
+    }
+
+    .left-arrow {
+        left: 0;
+    }
+
+    .right-arrow {
+        right: 0;
     }
 </style>
