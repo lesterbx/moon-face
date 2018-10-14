@@ -3,7 +3,7 @@
         <sky/>
         <moon :date="date"/>
         <grass/>
-        <date-button :date.sync="date" @dateChanged="dateChanged"></date-button>
+        <date-button :date="date" @dateChanged="dateChanged"></date-button>
         <location-button></location-button>
     </div>
 </template>

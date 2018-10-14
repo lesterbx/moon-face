@@ -42,21 +42,17 @@
 
           let cx = (width / 2) - (radius / 2)
           let cy = (height / 2) - (radius / 2)
-
           if (height > 500) cy -= 100
           shadow = draw.path(this.getPath(radius / 2, { fraction: 1, phase: 0.97 })).fill('#151515')
           moon = draw.path(this.getPath(radius / 2, this.moonInfo)).fill('#dfe1b7')
-          moon.move(cx + cx * this.moonInfo.fraction -20, cy)
-          shadow.move(cx, cy)
+          moon.dmove(cx, cy)
+          shadow.dmove(cx, cy)
         }
       },
       getPath (radius, moonInfo) {
         const kappa = 4 * ((Math.sqrt(2) - 1) / 3)
         let offsetRight = 0 //offset right
         let offsetLeft = 0 //offset left
-        if (moonInfo.phase > 0.48 && moonInfo.phase < 0.52) {
-          radius += 20
-        }
         if (moonInfo.phase > 0.97 || moonInfo.phase < 0.02) {
           return ''
         } else if (moonInfo.phase < 0.5) {

@@ -1,26 +1,25 @@
 <template>
     <div class="button date-button">
         <i class="icon-calendar-empty"></i>
-        {{this.date.toLocaleDateString()}}
+        <input v-model="dateSt" id="date" type="date" required="true">
     </div>
 </template>
 
 <script>
+  import moment from 'moment'
+
   export default {
     name: 'DateButton',
-    data () {
-      return {
-        selectedDate: new Date()
-      }
-    },
+    props: ['date'],
     computed: {
-      date: {
+      dateSt: {
         get () {
-          return this.selectedDate
+          return moment(this.date).format('YYYY-MM-DD')
         },
         set (date) {
-          this.selectedDate = date
-          this.$emit('dateChanged', date)
+          if (date) {
+            this.$emit('dateChanged', moment(date, 'YYYY-MM-DD'))
+          }
         }
       }
     },
@@ -32,5 +31,13 @@
         position: absolute;
         top: 1em;
         right: 1em;
+    }
+
+    input[type="date"] {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        font-size: 1em;
     }
 </style>
