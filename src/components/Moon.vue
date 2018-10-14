@@ -46,7 +46,7 @@
           if (height > 500) cy -= 100
           shadow = draw.path(this.getPath(radius / 2, { fraction: 1, phase: 0.97 })).fill('#151515')
           moon = draw.path(this.getPath(radius / 2, this.moonInfo)).fill('#dfe1b7')
-          moon.move(cx, cy)
+          moon.move(cx + cx * this.moonInfo.fraction -20, cy)
           shadow.move(cx, cy)
         }
       },
